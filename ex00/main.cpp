@@ -6,11 +6,12 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:27 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 17:24:46 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:02:23 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 int main()
 {
@@ -22,6 +23,20 @@ std::cout << i->getType() << " " << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
+
+std::cout  << std::endl;
+std::cout  << std::endl;
+std::cout  << "wrong animal test cases:" << std::endl;
+std::cout  << std::endl;
+std::cout  << std::endl;
+
+const WrongAnimal* koira = new WrongAnimal();
+WrongAnimal* kissa = new WrongCat();
+std::cout << koira->getType() << " " << std::endl;
+std::cout << kissa->getType() << " " << std::endl;
+kissa->makeSound();
+koira->makeSound();
+
 
 return 0;
 }
