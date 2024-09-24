@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:03 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 23:02:19 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:09:35 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	WrongAnimal(WrongAnimal& copy);
 	void makeSound() const;
 	std::string getType() const;
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 };
 
 

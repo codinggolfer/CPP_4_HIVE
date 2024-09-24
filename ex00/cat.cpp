@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:52 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 17:35:08 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:12:27 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ std::string Cat::getType() const {
 }
 
 Cat::~Cat() {
-	std::cout << this->type +  " got crushed by deconsturctor." << std::endl;
+	std::cout << this->type +  " found a new home." << std::endl;
 }

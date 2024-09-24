@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:18:37 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 23:03:07 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:13:45 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void WrongCat::makeSound() const {
 }
 
 WrongCat::~WrongCat() {
-	std::cout << this->type << " destroyed" << std::endl;
+	std::cout << this->type << " destroyed, This is WrongCats deconsturctor." << std::endl;
 }
 
 std::string WrongCat::getType() const
@@ -32,7 +32,7 @@ std::string WrongCat::getType() const
 }
 
 
-
+//#############################################################################################################
 
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal") {
@@ -46,7 +46,7 @@ void WrongAnimal::makeSound() const {
 }
 
 WrongAnimal::~WrongAnimal() {
-	std::cout << type << " destroyed, this is wronganimal" << std::endl;
+	std::cout << type << " destroyed, this is WrongAnimal deconsturctor" << std::endl;
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 17:34:51 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:12:17 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ std::string Dog::getType() const {
 }
 
 Dog::~Dog() {
-	std::cout << this->type +  " got crushed by deconsturctor." << std::endl;
+	std::cout << this->type +  " released to the wild." << std::endl;
 }
