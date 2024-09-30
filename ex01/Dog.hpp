@@ -1,47 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 16:38:38 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/30 12:23:38 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/30 11:07:42 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/09/30 12:25:21 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-
-class Animal
-{
-private:
-	
-protected:
-	std::string type;
-public:
-	Animal();
-	Animal(Animal& copy);
-	Animal& operator=(Animal& copy);
-	virtual void makeSound() const;
-	virtual std::string getType() const;
-	virtual ~Animal();
-};
-
-class Cat : public Animal
-{
-public:
-	Cat();
-	Cat(Cat& copy);
-	Cat& operator=(Cat& copy);
-	std::string getType() const;
-	void makeSound() const;
-	~Cat();
-};
+#include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
+private:
+	Brain* _DogBrain;
 public:
 	Dog();
 	Dog(Dog& copy);
@@ -50,6 +27,3 @@ public:
 	void makeSound() const;
 	~Dog();
 };
-
-
-
