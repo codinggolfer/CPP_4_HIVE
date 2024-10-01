@@ -1,4 +1,4 @@
-NAME	=	Abstract
+NAME	=	More_Animals
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++11
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dog.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/30 12:37:02 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:48:45 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Dog::Dog() {
 	std::cout << "The Animal was a " << this->type + "." << std::endl;
 }
 
-Dog::Dog(Dog& copy)
+Dog::Dog(Dog& copy) : _DogBrain(new Brain(*(copy._DogBrain)))
 {
-	*this = copy;
+	this->type = copy.type;
 	std::cout << "Dog was created with Dog copy consturctor" << std::endl;
 }
 
@@ -28,18 +28,33 @@ Dog& Dog::operator=(Dog& copy)
 {
 	if (this != &copy)
 	{
+		delete _DogBrain;
 		this->type = copy.type;
-		this->_DogBrain = copy._DogBrain;
+		this->_DogBrain = new Brain(*(copy._DogBrain));
 	}
 	return *this;
 }
 
 void Dog::makeSound() const {
-	std::cout << "This animal is making proper " << this->type << " noices." << std::endl;
+	std::cout << "HAUHAU " << this->type << " noices. In Dog.cpp" << std::endl;
 }
 
 std::string Dog::getType() const {
 	return type;
+}
+
+void Dog::setIdeas(std::string newIdeas) {
+	this->_DogBrain->setIdeas(newIdeas, ideaIndex);
+	ideaIndex++;
+}
+
+std::string Dog::getIdeas() {
+	return _DogBrain->getIdeas();
+}
+
+void Dog::printIdeas()
+{
+		this->_DogBrain->printIdeas(ideaIndex);
 }
 
 Dog::~Dog() {

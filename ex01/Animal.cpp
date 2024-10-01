@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:50:33 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 17:36:09 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:32:31 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ void Animal::makeSound() const {
 
 std::string Animal::getType() const {
 	return type;
+}
+
+void Animal::setIdeas(std::string lol) {
+	(void)lol;
 }
 
 Animal::~Animal() {

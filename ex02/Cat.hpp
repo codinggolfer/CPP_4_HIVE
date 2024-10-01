@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:06:26 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/30 12:25:18 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:25:46 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ class Cat : public Animal
 {
 private:
 	Brain* _CatBrain;
+	int ideaIndex = 0;
 public:
 	Cat();
 	Cat(Cat& copy);
 	Cat& operator=(Cat& copy);
 	std::string getType() const;
 	void makeSound() const;
+	void setIdeas(std::string newideas);
+	void printIdeas();
+	std::string getIdeas();
 	~Cat();
 };

@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:38 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/30 11:11:05 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:01:33 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ public:
 	Animal();
 	Animal(Animal& copy);
 	Animal& operator=(Animal& copy);
-	virtual void makeSound() const;
-	virtual std::string getType() const;
+	virtual void makeSound() const = 0;
+	virtual std::string getType() const = 0;
+	virtual void setIdeas(std::string lol) = 0;
 	virtual ~Animal();
 };
 

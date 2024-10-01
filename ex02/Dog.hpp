@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:07:42 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/30 12:25:21 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:25:41 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ class Dog : public Animal
 {
 private:
 	Brain* _DogBrain;
+	int ideaIndex = 0;
 public:
 	Dog();
 	Dog(Dog& copy);
 	Dog& operator=(Dog& copy);
 	std::string getType() const;
+	void setIdeas(std::string newideas);
+	std::string getIdeas();
+	void printIdeas();
 	void makeSound() const;
 	~Dog();
 };

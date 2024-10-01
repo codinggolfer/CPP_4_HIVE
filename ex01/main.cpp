@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:27 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/30 12:49:05 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:47:59 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,42 @@
 
 int main()
 {
-// const Animal* meta = new Animal();
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// std::cout << j->getType() << " " << std::endl;
-// std::cout << i->getType() << " " << std::endl;
-// i->makeSound(); //will output the cat sound!
-// j->makeSound();
-// meta->makeSound();
+	Animal* animals[6];
 
-// delete meta; 
-// delete i; 
-// delete j; 
+	for (int i = 0; i < 6; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
 
-// std::cout  << std::endl;
-// std::cout  << std::endl;
-// std::cout  << "wrong animal test cases:" << std::endl;
-// std::cout  << std::endl;
-// std::cout  << std::endl;
+	animals[0]->getType();
+	animals[1]->getType();
+	animals[2]->getType();
+	animals[3]->getType();
+	animals[4]->getType();
+	animals[5]->getType();
 
-// const WrongAnimal* koira = new WrongAnimal();
-// WrongAnimal* kissa = new WrongCat();
-// std::cout << koira->getType() << " " << std::endl;
-// std::cout << kissa->getType() << " " << std::endl;
-// kissa->makeSound();
-// koira->makeSound();
+	animals[0]->makeSound();
+	animals[1]->makeSound();
+	animals[2]->makeSound();
+	animals[3]->makeSound();
+	animals[4]->makeSound();
+	animals[5]->makeSound();
+	// Animal* dog = new Dog();
+	// // Animal* dog1 = new Dog();
+	// // Animal* Cat1 = new Cat();
+	// // Animal* Cat2 = new Cat();
+	// dog->setIdeas("kakka");
+	// dog->setIdeas("kakka1");
+	// dog->setIdeas("kakka2");
+	
+	// dog->makeSound();
 
-// delete koira;
-// delete kissa; 
-
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-
-delete j;
-delete i;
+	// delete dog;
+	for (int i = 0; i < 6; i++)
+		delete animals[i];
 
 return 0;
 }
