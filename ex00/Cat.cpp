@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 16:37:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 23:12:17 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/24 16:37:52 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/10/01 12:41:24 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Dog::Dog() : type("Dog") {
+Cat::Cat() {
+	this->type = "Cat";
 	std::cout << "The Animal was a " << this->type + "." << std::endl;
 }
 
-Dog::Dog(Dog& copy)
+Cat::Cat(Cat& copy)
 {
 	*this = copy;
-	std::cout << "Dog was created with Dog copy consturctor" << std::endl;
+	std::cout << "Cat was created with Cat copy consturctor" << std::endl;
 }
 
-Dog& Dog::operator=(Dog& copy)
+Cat& Cat::operator=(Cat& copy)
 {
 	if (this != &copy)
 		this->type = copy.type;
 	return *this;
 }
 
-void Dog::makeSound() const {
-	std::cout << "This animal is making proper " << this->type << " noices." << std::endl;
+void Cat::makeSound() const {
+	std::cout << "This Cat is making proper " << this->type << " noices." << std::endl;
 }
 
-std::string Dog::getType() const {
+std::string Cat::getType() const {
 	return type;
 }
 
-Dog::~Dog() {
-	std::cout << this->type +  " released to the wild." << std::endl;
+Cat::~Cat() {
+	std::cout << this->type +  " found a new home at deconstructor city." << std::endl;
 }

@@ -6,12 +6,15 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:27 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/24 23:11:42 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/01 12:39:09 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main()
 {

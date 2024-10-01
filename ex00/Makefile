@@ -2,7 +2,7 @@ NAME	=	Poly
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++11
 
-FILES	=	main.cpp cat.cpp dog.cpp Animal.cpp WrongAnimal.cpp
+FILES	=	main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
 
 CC		=	c++
 

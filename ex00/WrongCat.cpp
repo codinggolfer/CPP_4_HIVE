@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 22:18:37 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 12:29:17 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/10/01 12:29:27 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/10/01 12:29:40 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-WrongAnimal::WrongAnimal() : type("WrongAnimal") {
+WrongCat::WrongCat() : type("WrongCat") {
 	std::cout << this->type << " created" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal& copy) : type(copy.type) {}
+WrongCat::WrongCat(WrongCat& copy) : type(copy.type) {}
 
-void WrongAnimal::makeSound() const {
-	std::cout << "This WrongAnimal is making weird " << type << " noices." << std::endl;
+void WrongCat::makeSound() const {
+	std::cout << "This WrongCat is making proper " << this->type << " noices." << std::endl;
 }
 
-WrongAnimal::~WrongAnimal() {
-	std::cout << type << " destroyed, this is WrongAnimal deconsturctor" << std::endl;
+WrongCat::~WrongCat() {
+	std::cout << this->type << " destroyed, This is WrongCats deconsturctor." << std::endl;
 }
 
-
-std::string WrongAnimal::getType() const
+std::string WrongCat::getType() const
 {
 	return type;
 }

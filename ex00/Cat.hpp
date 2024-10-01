@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 16:38:03 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 12:26:15 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/30 11:06:26 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/10/01 12:40:38 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 #include "Animal.hpp"
 
-class WrongAnimal
+class Cat : public Animal
 {
-protected:
-	const	std::string type;
 public:
-	WrongAnimal();
-	WrongAnimal(WrongAnimal& copy);
-	void makeSound() const;
+	Cat();
+	Cat(Cat& copy);
+	Cat& operator=(Cat& copy);
 	std::string getType() const;
-	virtual ~WrongAnimal();
+	void makeSound() const;
+	~Cat();
 };
-
