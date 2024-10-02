@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:07:16 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 18:25:15 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 09:23:59 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure(Cure& copy) : AMateria(copy) {
+Cure::Cure(const Cure& copy) : AMateria(copy.type) {
 	this->type = copy.type;
 }
 
@@ -26,7 +26,7 @@ Cure& Cure::operator=(Cure& copy) {
 	return *this;
 }
 
-Cure* Cure::clone() {
+AMateria* Cure::clone() const {
 	return new Cure(*this);
 }
 

@@ -2,7 +2,7 @@ NAME	=	Materia
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++11
 
-FILES	=	main.cpp AMateria.cpp ICharacter.cpp IMateriaSource.cpp
+FILES	=	main.cpp AMateria.cpp ICharacter.cpp IMateriaSource.cpp Cure.cpp Ice.cpp Character.cpp
 
 CC		=	c++
 

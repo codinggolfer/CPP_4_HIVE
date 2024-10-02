@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:19:51 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 18:24:36 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 09:25:05 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice() : AMateria("Ice") {}
 
-Ice::Ice(Ice& copy) : AMateria(copy) {
+Ice::Ice(const Ice& copy) : AMateria(copy.type) {
 	this->type = copy.type;
 }
 
@@ -26,7 +26,7 @@ Ice& Ice::operator=(Ice& copy) {
 	return *this;
 }
 
-Ice* Ice::clone() {
+AMateria* Ice::clone() const {
 	return new Ice(*this);
 }
 
