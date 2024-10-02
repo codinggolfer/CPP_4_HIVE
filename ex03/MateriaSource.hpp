@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:44:29 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 10:48:42 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:11:08 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
 
 class MateriaSource : public IMateriaSource
 {
 private:
-	/* data */
+	AMateria* learned[4];
+	int materiaCount;
 public:
 	MateriaSource();
+	// MateriaSource(MateriaSource& copy);
+	// MateriaSource& operator=(MateriaSource& copy);
 
-
-	void learnMateria(AMateria*);
-	AMateria* createMateria(std::string const & type);
-	
-	~MateriaSource();
+	void learnMateria(AMateria*) override;
+	AMateria* createMateria(std::string const & type) override;
+	~MateriaSource() override;
 };
 

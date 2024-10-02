@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:40:05 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 09:11:32 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:06:59 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+class ICharacter;
 
 class AMateria
 {
@@ -27,5 +28,5 @@ public:
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
-	virtual AMateria::~AMateria();
+	virtual ~AMateria();
 };

@@ -6,13 +6,13 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:19:51 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 09:25:05 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:44:46 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("Ice") {}
+Ice::Ice() : AMateria("ice") {}
 
 Ice::Ice(const Ice& copy) : AMateria(copy.type) {
 	this->type = copy.type;

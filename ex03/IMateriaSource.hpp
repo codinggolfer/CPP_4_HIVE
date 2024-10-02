@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:45:01 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 10:48:33 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:03:02 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "AMateria.hpp"
 
-class IMateriaSource : public AMateria
+class IMateriaSource
 {
 public:
 virtual ~IMateriaSource() {}

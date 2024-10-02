@@ -6,31 +6,44 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:59:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 10:43:06 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:14:04 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-int floorIndex = 0;
 
-Character::Character() : name(nullptr) {
-	this->slot = new std::string[4];
+
+Character::Character() : name(nullptr), floorIndex(0) {
+	for (int i = 0; i < 4; i++)
+		slot[i] = nullptr;
 }
 
-Character::Character(std::string newName) : name(newName) {}
+Character::Character(std::string newName) : name(newName), floor(nullptr), floorIndex(0)  {
+	for (int i = 0; i < 4; i++)
+		slot[i] = nullptr;
+}
 
-Character::Character(Character& copy) : name(copy.name) {}
+Character::Character(const Character& copy) : name(copy.name), floor(copy.floor), floorIndex(0) {
+	for (int i = 0; i < 4; i++)
+		delete this->slot[i];
+	for (int i = 0; i < 4; i++)
+		this->slot[i] = copy.slot[i]->clone();
+}
 
-Character& Character::operator=(Character& copy) {
+Character& Character::operator=(const Character& copy) {
 	if (this != &copy)
 	{
-		this->name = copy.name;
-	}
+		for (int i = 0; i < 4; i++)
+			delete this->slot[i];
+		for (int i = 0; i < 4; i++) {
+                this->slot[i] = copy.slot[i]->clone();
+        }
+    }
 	return *this;
 }
 
-std::string const& Character::getName() const {
+std::string const & Character::getName() const {
 	return this->name;
 }
 
@@ -38,14 +51,17 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->slot[i].empty())
-			slot[i] = m->getType();
+		if (this->slot[i] == nullptr) {
+			slot[i] = m;
+			return; 	
+		}
 	}
+	std::cout << "Inventory is full" << std::endl;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx > 3 && idx < 0) {
+	if (idx < 0 || idx > 3) {
 		std::cout << "invalid index, no slots from inventory found" << std::endl;
 		return;
 	}
@@ -55,13 +71,18 @@ void Character::unequip(int idx)
 }
 
 void Character::use(int idx, ICharacter& target) {
-	if (!slot[idx].compare(target.getType()))
+	if (idx > 3 || idx < 0) {
+		std::cout << "invalid index, no slots from inventory found" << std::endl;
+		return;
+	}
+	if (!slot[idx]->getType().compare("ice"))
 		std::cout <<  "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-	else if (!slot[idx].compare(target.getType()))
+	else if (!slot[idx]->getType().compare("cure"))
 		std::cout <<  "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 
 Character::~Character() {
-	delete[] slot;
+	for (int i = 0; i < 4; i++)
+		delete this->slot[i];
 }
