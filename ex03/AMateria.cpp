@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 08:55:07 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 14:20:04 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/03 09:29:19 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 AMateria::AMateria() {}
 
 AMateria::AMateria(std::string const& type) : type(type) {}
+
+AMateria::AMateria(AMateria& copy) : type(copy.type) {}
+
+AMateria& AMateria::operator=(AMateria& copy) {
+	if (this != &copy)
+	{
+		this->type = copy.type;
+	}
+	return *this;
+}
 
 std::string const& AMateria::getType() const {
 	return this->type;

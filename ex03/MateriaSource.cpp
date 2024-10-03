@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:44:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 15:11:02 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/03 09:33:50 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,21 @@ MateriaSource::MateriaSource() : materiaCount(0) {
 		learned[i] = nullptr;
 }
 
-// MateriaSource::MateriaSource(MateriaSource& copy) {
-	
-// }
+MateriaSource::MateriaSource(MateriaSource& copy) : materiaCount(copy.materiaCount) {
+	for (int i= 0; i < 4; i++)
+		learned[i] = copy.learned[i];
+}
 
 
-// MateriaSource& MateriaSource::operator=(MateriaSource& copy) {
-	
-// }
-
-
-
+MateriaSource& MateriaSource::operator=(MateriaSource& copy) {
+	if (this != &copy)
+	{
+		this->materiaCount = copy.materiaCount;
+		for (int i= 0; i < 4; i++)
+			learned[i] = copy.learned[i];
+	}
+	return *this;
+}
 
 void MateriaSource::learnMateria(AMateria* materia) {
 	if (materia == nullptr)
