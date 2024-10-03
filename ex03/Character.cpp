@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:59:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/03 08:56:39 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/03 09:46:19 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Character::Character(const Character& copy) : name(copy.name), floorHead(nullptr
 	for (int i = 0; i < 4; i++)
 		delete this->slot[i];
 	for (int i = 0; i < 4; i++)
-		this->slot[i] = copy.slot[i]->clone();
+		this->slot[i] = copy.slot[i] ? copy.slot[i]->clone() : nullptr;
 }
 
 Character& Character::operator=(const Character& copy) {

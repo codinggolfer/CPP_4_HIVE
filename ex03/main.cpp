@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:25:07 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/03 09:34:55 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/03 09:52:05 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ ICharacter* me = new Character("me");
 AMateria* tmp;
 tmp = src->createMateria("ice");
 me->equip(tmp);
-//std::cout << tmp->getType() << std::endl;
+std::cout << tmp->getType() << std::endl;
 tmp = src->createMateria("ice");
+//me->equip(tmp);
+tmp = src->createMateria("curu");
+std::cout << tmp->getType() << std::endl;
 me->equip(tmp);
-tmp = src->createMateria("ice");
-me->equip(tmp);
-//std::cout << tmp->getType() << std::endl;
+std::cout << tmp->getType() << std::endl;
 me->unequip(0);
 me->unequip(1);
 ICharacter* bob = new Character("bob");
