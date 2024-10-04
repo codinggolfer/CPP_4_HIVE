@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:25:07 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/04 16:44:42 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:56:43 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ int main()
     delete bob;
     delete bla;
     delete me;
-    delete other;
+   	delete other;
     delete src;
 }
 	

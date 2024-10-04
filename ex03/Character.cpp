@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:59:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/04 16:50:04 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:08:06 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void Character::equip(AMateria* m)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->slot[i] == nullptr) {
-			slot[i] = m;
+			slot[i] = m->clone();
+			addToFloor(m);
 			std::cout << "new skill equiped by " + this->name + " and the type is " + slot[i]->getType() << std::endl;
 			return; 	
 		}
@@ -76,7 +77,7 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx)
 {
 	
-	if (idx >= 0 && idx > 4 && slot[idx] == nullptr) {
+	if (idx < 0 || idx > 3 || slot[idx] == nullptr) {
 		std::cout << "invalid index or materia slot empty in index: " << idx <<  std::endl;
 		return;
 	}
@@ -106,6 +107,12 @@ void Character::clearFloorList() {
 }
 
 void Character::addToFloor(AMateria* slot){
+	Floor* temp = floorHead;
+	while (temp) {
+		if (temp->materia == slot)
+			return ;
+		temp = temp->next;
+	}
 	Floor* newNode = new Floor;
 	newNode->materia = slot;
     newNode->next = nullptr;
