@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:19:51 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/02 14:44:46 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:50:15 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ AMateria* Ice::clone() const {
 	return new Ice(*this);
 }
 
-Ice::~Ice() {}
+Ice::~Ice() {
+	std::cout << "Ice materia destroyed" << std::endl;
+}

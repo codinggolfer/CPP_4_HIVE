@@ -6,13 +6,14 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:59:30 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/03 08:48:03 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:05:31 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
+
 
 class Character : public ICharacter
 {
@@ -38,6 +39,7 @@ public:
 	void use(int idx, ICharacter& target) override;
 	
 	void clearFloorList();
+	void addToFloor(AMateria* slot);
 	
 	~Character() override;
 };

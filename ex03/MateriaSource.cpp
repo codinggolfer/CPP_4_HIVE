@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:44:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/03 09:33:50 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:06:59 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ MateriaSource::MateriaSource() : materiaCount(0) {
 
 MateriaSource::MateriaSource(MateriaSource& copy) : materiaCount(copy.materiaCount) {
 	for (int i= 0; i < 4; i++)
+			delete learned[i];
+	for (int i= 0; i < 4; i++)
 		learned[i] = copy.learned[i];
 }
 
@@ -26,6 +28,8 @@ MateriaSource::MateriaSource(MateriaSource& copy) : materiaCount(copy.materiaCou
 MateriaSource& MateriaSource::operator=(MateriaSource& copy) {
 	if (this != &copy)
 	{
+		for (int i= 0; i < 4; i++)
+			delete learned[i];
 		this->materiaCount = copy.materiaCount;
 		for (int i= 0; i < 4; i++)
 			learned[i] = copy.learned[i];
@@ -39,10 +43,12 @@ void MateriaSource::learnMateria(AMateria* materia) {
 	if (materiaCount < 4) {
 		learned[materiaCount] = materia;
 		materiaCount++;
+		std::cout << "Materia learned " + materia->getType() << std::endl;
 	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
+	std::cout << "Materia learned " + type << std::endl;
 	for (int i = 0; i < materiaCount; i++) {
 		if (!learned[i]->getType().compare(type))
 			return learned[i]->clone();
@@ -51,6 +57,7 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 }
 
 MateriaSource::~MateriaSource() {
+	std::cout << "materia deconstructor" << std::endl;
 	for (int i = 0; i < materiaCount; i++)
 		delete learned[i];
 }
