@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:35:18 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/07 12:45:35 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:21:28 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,20 @@ Brain& Brain::operator=(Brain& copy)
 
 void Brain::setIdeas(std::string newIdeas, int ideaIndex) {
 	if (ideaIndex < 0 || ideaIndex > 99)
+	{
+		std::cout << "Brain is full of ideas" << std::endl;
 		return ;
+	}
 	this->ideas[ideaIndex] = newIdeas;
 }
 
-std::string Brain::getIdeas() {
-	return *this->ideas;
+std::string Brain::getIdeas(int i) {
+	if (i > 99)
+	{
+		std::cout << "can't have more than 100 ideas" << std::endl;
+		return "";
+	}
+	return this->ideas[i];
 }
 
 void Brain::printIdeas(int ideaIndex)

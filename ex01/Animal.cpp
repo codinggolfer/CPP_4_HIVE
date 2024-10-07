@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:50:33 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:32:31 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:37:12 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ std::string Animal::getType() const {
 
 void Animal::setIdeas(std::string lol) {
 	(void)lol;
+}
+
+std::string Animal::getIdeas(int ideaIndex) {
+	if (ideaIndex < 0 || ideaIndex > 99)
+		std::cout << "invalid idea index" << std::endl;
+	return "";
 }
 
 Animal::~Animal() {

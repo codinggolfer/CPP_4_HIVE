@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:52 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:48:35 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:41:07 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void Cat::setIdeas(std::string newIdeas) {
 	ideaIndex++;
 }
 
-std::string Cat::getIdeas() {
-	return _CatBrain->getIdeas();
+std::string Cat::getIdeas(int ideaIndex) {
+	return _CatBrain->getIdeas(ideaIndex);
 }
 
 void Cat::printIdeas()

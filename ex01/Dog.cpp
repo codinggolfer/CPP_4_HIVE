@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:48:45 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:34:26 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,27 @@ void Dog::makeSound() const {
 	std::cout << "HAUHAU " << this->type << " noices. In Dog.cpp" << std::endl;
 }
 
-std::string Dog::getType() const {
-	return type;
-}
+// std::string Dog::getType() const {
+// 	return type;
+// }
 
 void Dog::setIdeas(std::string newIdeas) {
+		if (ideaIndex > 99)
+	{
+		std::cout << "can't have that many ideas" << std::endl;
+		return;
+	}
 	this->_DogBrain->setIdeas(newIdeas, ideaIndex);
 	ideaIndex++;
 }
 
-std::string Dog::getIdeas() {
-	return _DogBrain->getIdeas();
+std::string Dog::getIdeas(int ideaIndex) {
+	if (ideaIndex < 0 || ideaIndex > 99)
+	{
+		std::cout << "invalid idea index" << std::endl;
+		return "";
+	}
+	return _DogBrain->getIdeas(ideaIndex);
 }
 
 void Dog::printIdeas()

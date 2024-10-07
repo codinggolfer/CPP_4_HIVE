@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:27 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:47:59 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:39:39 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main()
 {
 	Animal* animals[6];
-
+	Animal* tmp = new Animal();
 	for (int i = 0; i < 6; i++)
 	{
 		if (i % 2 == 0)
@@ -26,7 +26,9 @@ int main()
 		else
 			animals[i] = new Cat();
 	}
-
+	std::cout << tmp->getType() << std::endl;
+	tmp->makeSound();
+	tmp->getIdeas(88);
 	animals[0]->getType();
 	animals[1]->getType();
 	animals[2]->getType();
@@ -40,6 +42,8 @@ int main()
 	animals[3]->makeSound();
 	animals[4]->makeSound();
 	animals[5]->makeSound();
+	animals[5]->setIdeas("hellooooooooooo\n");
+	std::cout << animals[5]->getIdeas(0);
 	// Animal* dog = new Dog();
 	// // Animal* dog1 = new Dog();
 	// // Animal* Cat1 = new Cat();
@@ -53,6 +57,7 @@ int main()
 	// delete dog;
 	for (int i = 0; i < 6; i++)
 		delete animals[i];
+	delete tmp;
 
 return 0;
 }

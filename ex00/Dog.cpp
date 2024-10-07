@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 12:41:32 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:41:45 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void Dog::makeSound() const {
 	std::cout << "This Dog is making proper " << this->type << " noices." << std::endl;
 }
 
-std::string Dog::getType() const {
-	return type;
-}
+// std::string Dog::getType() const {
+// 	return type;
+// }
 
 Dog::~Dog() {
 	std::cout << this->type +  " released to the wild in deconstructor town." << std::endl;

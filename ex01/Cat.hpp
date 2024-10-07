@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:06:26 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:25:46 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:31:35 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ public:
 	Cat();
 	Cat(Cat& copy);
 	Cat& operator=(Cat& copy);
-	std::string getType() const;
+	//std::string getType() const;
 	void makeSound() const;
 	void setIdeas(std::string newideas);
 	void printIdeas();
-	std::string getIdeas();
+	std::string getIdeas(int ideaIndex);
 	~Cat();
 };

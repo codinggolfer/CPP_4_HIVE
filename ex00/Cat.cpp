@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:52 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 12:41:24 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:41:40 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void Cat::makeSound() const {
 	std::cout << "This Cat is making proper " << this->type << " noices." << std::endl;
 }
 
-std::string Cat::getType() const {
-	return type;
-}
+// std::string Cat::getType() const {
+// 	return type;
+// }
 
 Cat::~Cat() {
 	std::cout << this->type +  " found a new home at deconstructor city." << std::endl;

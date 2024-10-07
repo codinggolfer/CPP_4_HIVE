@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:35:18 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:17:41 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:32:23 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ void Brain::setIdeas(std::string newIdeas, int ideaIndex) {
 	this->ideas[ideaIndex] = newIdeas;
 }
 
-std::string Brain::getIdeas() {
+std::string Brain::getIdeas(int i) {
+	if (i < 0 || i > 99)
+	{
+		std::cout << "can't have that many ideas" << std::endl;
+		return "";
+	}
 	return *this->ideas;
 }
 

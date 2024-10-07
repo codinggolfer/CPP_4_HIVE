@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:37:52 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:48:35 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:34:20 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,27 @@ void Cat::makeSound() const {
 	std::cout << "MIAUMIAU " << this->type << " noices." << std::endl;
 }
 
-std::string Cat::getType() const {
-	return type;
-}
+// std::string Cat::getType() const {
+// 	return type;
+// }
 
 void Cat::setIdeas(std::string newIdeas) {
+	if (ideaIndex > 99)
+	{
+		std::cout << "can't have that many ideas" << std::endl;
+		return;
+	}
 	this->_CatBrain->setIdeas(newIdeas, ideaIndex);
 	ideaIndex++;
 }
 
-std::string Cat::getIdeas() {
-	return _CatBrain->getIdeas();
+std::string Cat::getIdeas(int ideaIndex) {
+	if (ideaIndex < 0 || ideaIndex > 99)
+	{
+		std::cout << "invalid idea index" << std::endl;
+		return "";
+	}
+	return _CatBrain->getIdeas(ideaIndex);
 }
 
 void Cat::printIdeas()

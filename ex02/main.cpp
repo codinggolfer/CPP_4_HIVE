@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:38:27 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:58:10 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:22:31 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ int main()
 	animals[3]->makeSound();
 	animals[4]->makeSound();
 	animals[5]->makeSound();
+	for (int i = 0; i < 101; i++)
+		animals[4]->setIdeas("HELLO");
+	std::cout << animals[4]->getIdeas(100) << std::endl;
 	// Animal* dog = new Dog();
 	// // Animal* dog1 = new Dog();
 	// // Animal* Cat1 = new Cat();

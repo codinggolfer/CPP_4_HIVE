@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:13:19 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:16:55 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:02:44 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Brain(Brain& copy);
 	Brain& operator=(Brain& copy);
 	void setIdeas(std::string newideas, int ideaIndex);
-	std::string getIdeas();
+	std::string getIdeas(int i);
 	void printIdeas(int ideaIndex);
 	~Brain();
 };
