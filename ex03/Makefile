@@ -1,6 +1,6 @@
 NAME	=	Materia
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++11 -g #-fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror -std=c++11 #-g #-fsanitize=address
 
 FILES	=	main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 

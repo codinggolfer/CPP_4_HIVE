@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:35:18 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/01 16:17:41 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 12:45:35 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ Brain& Brain::operator=(Brain& copy)
 }
 
 void Brain::setIdeas(std::string newIdeas, int ideaIndex) {
+	if (ideaIndex < 0 || ideaIndex > 99)
+		return ;
 	this->ideas[ideaIndex] = newIdeas;
 }
 

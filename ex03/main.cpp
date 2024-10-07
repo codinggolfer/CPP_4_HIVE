@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:25:07 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/04 16:56:43 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/07 12:39:53 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,70 +20,70 @@
 
 int main()
 {
-	// {
-	// IMateriaSource* src = new MateriaSource();
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
-	// ICharacter* me = new Character("me");
-	// AMateria* tmp;
-	// tmp = src->createMateria("cure");
-	// me->equip(tmp);
-	// tmp = src->createMateria("ice");
-	// me->equip(tmp);
+	{
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
 	
-	// tmp = src->createMateria("cure");
+	tmp = src->createMateria("cure");
 	
-	// me->equip(tmp);
-	// me->unequip(0);
-	// me->unequip(1);
-	// me->unequip(1);
-	// me->unequip(0);
-	// me->equip(tmp);
-	// ICharacter* bob = new Character("bob");
-	// me->use(0, *bob);
-	// me->use(1, *bob);
-	// delete bob;
-	// delete me;
-	// delete src;
-	// }
-	// {
-    // IMateriaSource* src = new MateriaSource();
-    // src->learnMateria(new Ice());
-    // src->learnMateria(new Cure());
+	me->equip(tmp);
+	me->unequip(0);
+	me->unequip(1);
+	me->unequip(1);
+	me->unequip(0);
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	}
+	{
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
     
 
-    // AMateria* tmp;    
-    // ICharacter* boss = new Character("Boss");
-    // tmp = src->createMateria("ice");
-    // boss->equip(tmp);
+    AMateria* tmp;    
+    ICharacter* boss = new Character("Boss");
+    tmp = src->createMateria("ice");
+    boss->equip(tmp);
 
-    // tmp = src->createMateria("ice");
-    // boss->equip(tmp);
+    tmp = src->createMateria("ice");
+    boss->equip(tmp);
     
-    // tmp = src->createMateria("cure");
-    // boss->equip(tmp);
+    tmp = src->createMateria("cure");
+    boss->equip(tmp);
     
-    // tmp = src->createMateria("ice");
-    // boss->equip(tmp);
+    tmp = src->createMateria("ice");
+    boss->equip(tmp);
     
-    // tmp = src->createMateria("cure");
-    // boss->equip(tmp);
-    // std::cout << std::endl;
+    tmp = src->createMateria("cure");
+    boss->equip(tmp);
+    std::cout << std::endl;
     
-    // boss->unequip(0);
-    // boss->unequip(1);
-    // boss->unequip(2);
-    // boss->unequip(3);
+    boss->unequip(0);
+    boss->unequip(1);
+    boss->unequip(2);
+    boss->unequip(3);
 
-    // tmp = src->createMateria("cure");
-    // boss->equip(tmp);
-    // std::cout << "materia equipped!\n";
+    tmp = src->createMateria("cure");
+    boss->equip(tmp);
+    std::cout << "materia equipped!\n";
     
-    // boss->unequip(0);
+    boss->unequip(0);
     
-    // delete src;
-    // delete boss;
-	// }
+    delete src;
+    delete boss;
+	}
 	{
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
