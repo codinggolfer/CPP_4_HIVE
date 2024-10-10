@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:44:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/10/04 17:04:06 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/10/10 15:25:19 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,14 @@ MateriaSource& MateriaSource::operator=(MateriaSource& copy) {
 void MateriaSource::learnMateria(AMateria* materia) {
 	if (materia == nullptr)
 		return;
+	if (materiaCount >= 4)
+		delete materia;
 	if (materiaCount < 4) {
 		learned[materiaCount] = materia;
 		materiaCount++;
 		std::cout << "Materia learned " + materia->getType() << std::endl;
 	}
+	
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
